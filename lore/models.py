@@ -1,4 +1,5 @@
 from django.db import models
+from django_ckeditor.fields import RichTextField
 
 class House(models.Model):
     name = models.CharField(max_length=100)
@@ -51,3 +52,16 @@ class CombatRanks(models.Model):
 
     def __str__(self):
         return self.rank
+
+class CanonEvent(models.Model):
+    name = models.CharField(max_length=100)
+    date = models.DateField()
+    description = RichTextField()
+    
+    class Meta:
+        db_table = "canon_event"
+        verbose_name = "Canon Event"
+        verbose_name_plural = "Canon Events"
+
+    def __str__(self):
+        return self.name

@@ -32,6 +32,7 @@ AUTH_USER_MODEL = 'users.Profile'
 # Application definition
 
 INSTALLED_APPS = [
+    'core',
     'lore',
     'users',
     'rulesets',
