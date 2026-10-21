@@ -13,7 +13,7 @@ class Tiers(models.Model):
     class Category_Limits(models.TextChoices):
         name = models.CharField(max_length=255)
         tier = models.CharField(max_length=3, choices=tier_standard.choices)
-        description = CKEditor5Field(blank=True, null=True)
+        description = models.TextField(blank=True, null=True)
         
 class Ruleset(models.Model):
     name = models.CharField(max_length=255)
