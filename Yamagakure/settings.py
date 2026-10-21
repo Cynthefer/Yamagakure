@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$f6ztgr4&vx6(&0x52)$+d8k56wx4k9wi1zu$3vy5a!)+c1_w0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'users.Profile'
 
@@ -34,7 +34,9 @@ AUTH_USER_MODEL = 'users.Profile'
 INSTALLED_APPS = [
     'lore',
     'users',
+    'rulesets',
     'geography',
+    'django_ckeditor_5',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -119,6 +121,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / "mediafiles"
+
 
 
 # Email
@@ -127,5 +136,233 @@ STATIC_URL = 'static/'
 MAILERS = {
     'default': {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
+    },
+}
+
+#CKEDITOR CONFIG
+customColorPalette = [
+    {"color": "hsl(4, 90%, 58%)", "label": "Red"},
+    {"color": "hsl(340, 82%, 52%)", "label": "Pink"},
+    {"color": "hsl(291, 64%, 42%)", "label": "Purple"},
+    {"color": "hsl(262, 52%, 47%)", "label": "Deep Purple"},
+    {"color": "hsl(231, 48%, 48%)", "label": "Indigo"},
+    {"color": "hsl(207, 90%, 54%)", "label": "Blue"},
+]
+CKEDITOR_5_ALLOW_ALL_FILE_TYPES = True
+CKEDITOR_5_CONFIGS = {
+    "default": {
+        "removePlugins": ["WordCount"],
+        "toolbar": [
+            "heading",
+                            "horizontalLine",
+                            "codeBlock",
+                            "htmlEmbed",
+                            "|",
+                            "outdent",
+                            "indent",
+                            "|",
+                            "bold",
+                            "italic",
+                            "link",
+                            "underline",
+                            "strikethrough",
+                            "code",
+                            "subscript",
+                            "superscript",
+                            "highlight",
+                            "|",
+                            "bulletedList",
+                            "numberedList",
+                            "todoList",
+                            "|",
+                            "blockQuote",
+                            "linkImage",
+                            "insertImage",
+                            "|",
+                            "fontSize",
+                            "fontFamily",
+                            "fontColor",
+                            "fontBackgroundColor",
+                            "mediaEmbed",
+                            "removeFormat",
+                            "insertTable",
+                            "sourceEditing",
+                            "style",
+                            "specialCharacters",
+                            "showBlocks",
+                            "selectAll",
+                            "findAndReplace",
+                            "emoji",
+        ],
+    },
+    "comment": {
+        "language": {"ui": "en", "content": "ar"},
+        "toolbar": [
+            "heading",
+            "|",
+            "bold",
+            "italic",
+            "link",
+            "bulletedList",
+            "numberedList",
+            "blockQuote",
+        ],
+    },
+    "extends": {
+        "language": "ru",
+        "blockToolbar": [
+            "paragraph",
+            "heading1",
+            "heading2",
+            "heading3",
+            "|",
+            "bulletedList",
+            "numberedList",
+            "|",
+            "blockQuote",
+        ],
+        "toolbar": {
+            "items": [
+                "heading",
+                "horizontalLine",
+                "codeBlock",
+                "htmlEmbed",
+                "|",
+                "outdent",
+                "indent",
+                "|",
+                "bold",
+                "italic",
+                "link",
+                "underline",
+                "strikethrough",
+                "code",
+                "subscript",
+                "superscript",
+                "highlight",
+                "|",
+                "bulletedList",
+                "numberedList",
+                "todoList",
+                "|",
+                "blockQuote",
+                "linkImage",
+                "insertImage",
+                "|",
+                "fontSize",
+                "fontFamily",
+                "fontColor",
+                "fontBackgroundColor",
+                "mediaEmbed",
+                "removeFormat",
+                "insertTable",
+                "sourceEditing",
+                "style",
+                "specialCharacters",
+                "showBlocks",
+                "selectAll",
+                "findAndReplace",
+                "emoji",
+            ],
+            "shouldNotGroupWhenFull": True,
+        },
+        "image": {
+            "toolbar": [
+                "imageTextAlternative",
+                "|",
+                "imageStyle:alignLeft",
+                "imageStyle:alignRight",
+                "imageStyle:alignCenter",
+                "imageStyle:side",
+                "|",
+            ],
+            "styles": [
+                "full",
+                "side",
+                "alignLeft",
+                "alignRight",
+                "alignCenter",
+            ],
+        },
+        "table": {
+            "contentToolbar": [
+                "tableColumn",
+                "tableRow",
+                "mergeTableCells",
+                "tableProperties",
+                "tableCellProperties",
+                "toggleTableCaption",
+            ],
+            "tableProperties": {
+                "borderColors": customColorPalette,
+                "backgroundColors": customColorPalette,
+            },
+            "tableCellProperties": {
+                "borderColors": customColorPalette,
+                "backgroundColors": customColorPalette,
+            },
+        },
+        "heading": {
+            "options": [
+                {
+                    "model": "paragraph",
+                    "title": "Paragraph",
+                    "class": "ck-heading_paragraph",
+                },
+                {
+                    "model": "heading1",
+                    "view": "h1",
+                    "title": "Heading 1",
+                    "class": "ck-heading_heading1",
+                },
+                {
+                    "model": "heading2",
+                    "view": "h2",
+                    "title": "Heading 2",
+                    "class": "ck-heading_heading2",
+                },
+                {
+                    "model": "heading3",
+                    "view": "h3",
+                    "title": "Heading 3",
+                    "class": "ck-heading_heading3",
+                },
+            ],
+        },
+        "list": {
+            "properties": {
+                "styles": True,
+                "startIndex": True,
+                "reversed": True,
+            },
+        },
+        "link": {"defaultProtocol": "https://"},
+        "htmlSupport": {
+            "allow": [
+                {"name": "/.*/", "attributes": True, "classes": True, "styles": True},
+            ],
+        },
+        "mention": {
+            "feeds": [
+                {
+                    "marker": "@",
+                    "feed": [
+                        "@Barney",
+                        "@Lily",
+                        "@Marry Ann",
+                        "@Marshall",
+                        "@Robin",
+                        "@Ted",
+                    ],
+                    "minimumCharacters": 1,
+                },
+            ],
+        },
+        "style": {
+            "definitions": [
+                {"name": "Article category", "element": "h3", "classes": ["category"]},
+                {"name": "Info box", "element": "p", "classes": ["info-box"]},
+            ],
+        },
     },
 }
