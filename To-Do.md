@@ -35,34 +35,62 @@
 
 ### 4. `rulesets` App (The Laws)
 - [x] **RulesetCategory Limits Model:**
-  - `Name` (e.g., "Standard Rules", "Power Tiers").
-- [ ] **Ruleset Model:**
-  - Category (FK), Title, Content (RichText), Order (Integer).
+  - [x] `Name` (e.g., "Standard Rules", "Power Tiers").
+  - [x] `Description`
+- [x] **Ruleset Model:**
+  - [x] `Name`
+  - [ ] `Tier Limit`
+  - [x] Category (FK), Title, Content (RichText), Order (Integer).
 
-### 5. `lore` App (Worldbuilding & Map)
-- [ ] **LoreCategory Model:** 
-  - Name (e.g., "Power System").
-- [ ] **Character Model:**
-  - Name, Owner (FK to User), Status (Alive/Dead/NPC).
-  - Appearance, Backstory, Powers (RichText).
-  - Combat Rank (FK), Current XP, `required_rank`.
-- [ ] **LoreArticle Model:**
-  - Category (FK), Title, Content (RichText), Image, `required_rank`.
-- [ ] **MapLocation Model (MPTT Model for Hierarchy):**
-  - Name, Parent Location (TreeForeignKey).
-  - Description, Image.
-  - State Details: Ruling Faction, Is Warzone (Boolean).
-  - `required_rank`.
+### 5. `lore` App (System)
+- [x] **House Model:**
+  - [x] `Name`
+  - [x] `Emblem`
+- [x] **Power System:**
+ - [x] `Name`
+ - [x] `Scale` (continental, etc)
+ - [x] `Core Concept`
+ - [x] `Mechanics`
+- [x] **Combat Ranks:**
+  - [x] `Rank Name`
+  - [x] `Class Type` (Lower, High)
+- [x] **Canon Event:**
+ - [x] `Name`
+ - [x] `Date`
+ - [x] `Description`
+- [ ] **In-Character Calender Model:**
+ - [ ] `Months`
+ - [ ] `Days Of The Year`
+- [ ] **Legistlature Model:**
+ - [ ] `Name`
+ - [ ] `Last Date Updated`
+ - [ ] `Content`
 
-### 6. `history` App (Lore & Progression)
-- [ ] **CombatRank Model:**
-  - Name (e.g., Elite, Saint), Tier (High/Intermediate/Lower), Min XP, Max XP.
-- [ ] **HistoricEvent Model:**
-  - Title, Date of Event, Description (RichText), Image, `required_rank`.
+### 6. `Geography` App (Map)
+- [x] **Continent Model:**
+  - [x] `Name`
+  - [x] `Image map`
+  - [x] `Region`
+  - [x] `Land Mass`
+  - [x] `Description`
+- [x] **State Model:**
+  - [x] `Name`
+  - [x] `Image Map`
+  - [x] `Continent`
+  - [x] `Biome`
+  - [x] `Land mass`
+  - [x] `population`
+  - [x] `Region`
+  - [x] `Description`
 
 ### 7. `news` App (Announcements)
-- [ ] **NewsUpdate Model:**
-  - Title, Content (RichText), Date Posted, Is Pinned (Boolean), `required_rank`.
+- [x] **NewsUpdate Model:**
+  - [x] `Title`
+  - [x] `Content` (RichText)
+  - [x] `Thumbnail`
+  - [x] `Date Posted`
+  - [x] `Is Pinned (Boolean)`
+  - [x] `required_rank`.
 
 ---
 

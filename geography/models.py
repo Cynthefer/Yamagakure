@@ -66,7 +66,7 @@ class State(models.Model):
     governor = models.ForeignKey(House, on_delete=models.SET_NULL, null=True, blank=True, related_name='governed_states')
     continent = models.ForeignKey(Continent, on_delete=models.CASCADE, related_name='states')
     biome = models.CharField(max_length=100, choices=Biomes.choices, null=True, blank=True)
-    direction = models.CharField(max_length=100, choices=CardinalDirections.choices, null=True, blank=True)
+    region = models.CharField(max_length=100, choices=CardinalDirections.choices, null=True, blank=True)
     population = models.PositiveIntegerField()
     land_mass = models.FloatField(help_text="Land mass in square kilometers")
     
