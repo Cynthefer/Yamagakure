@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import House, PowerSystem, CombatRanks
+from .models import House, PowerSystem, CombatRanks, In_Character_Calendar, Legislature
 
 @admin.register(House)
 class HouseAdmin(admin.ModelAdmin):
@@ -15,3 +15,6 @@ class PowerSystemAdmin(admin.ModelAdmin):
 class CombatRanksAdmin(admin.ModelAdmin):
     list_display = ('rank', 'class_type')
     search_fields = ('rank', 'class_type')
+
+admin.site.register(In_Character_Calendar)
+admin.site.register(Legislature)

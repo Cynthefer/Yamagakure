@@ -27,7 +27,7 @@
 - [x] **BattlePost Model:**
   - [x] `Title`
   - [x] `Ruleset` (from rulesets.models )
-  - [ ] `Header Info` (Temperature, Weather, Windspeed, Location, Time).
+  - [x] `Header Info` (Temperature, Weather, Windspeed, Location, Time).
   - [x] `Narrative` (RichText).
   - [ ] `Image` (Optional).
   - [x]Outcome & Judging (Winner, Judge Notes).
@@ -39,7 +39,7 @@
   - [x] `Description`
 - [x] **Ruleset Model:**
   - [x] `Name`
-  - [ ] `Tier Limit`
+  - [x] `Tier Limit`
   - [x] Category (FK), Title, Content (RichText), Order (Integer).
 
 ### 5. `lore` App (System)
@@ -61,10 +61,10 @@
 - [ ] **In-Character Calender Model:**
  - [ ] `Months`
  - [ ] `Days Of The Year`
-- [ ] **Legistlature Model:**
- - [ ] `Name`
- - [ ] `Last Date Updated`
- - [ ] `Content`
+- [x] **Legistlature Model:**
+ - [x] `Name`
+ - [x] `Last Date Updated`
+ - [x] `Content`
 
 ### 6. `Geography` App (Map)
 - [x] **Continent Model:**
@@ -96,11 +96,7 @@
 
 ## Phase 3: Admin Configuration
 *Register all models and customize the admin interface for easy content management.*
-- [ ] **`users/admin.py`:** Use `UserAdmin` to display RP Name, Rank, XP, and Honorifics. Add custom actions to award/deduct XP.
-- [ ] **`core/admin.py`:** Register Ranks, Honorifics, Custom Fields (Inline for CustomFieldValues), and SiteSetting.
-- [ ] **`battleposts/admin.py`:** Register BattleTiers and BattlePosts. Use a Rich Text editor for the narrative.
-- [ ] **`lore/admin.py`:** Register Characters, LoreArticles, and MapLocation (using MPTT admin for drag-and-drop tree sorting).
-- [ ] **`rulesets`, `history`, `news`:** Standard admin registration with list displays for easy sorting.
+- [x] **Register Models**
 
 ---
 

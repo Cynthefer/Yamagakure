@@ -1,3 +1,5 @@
+from calendar import Month
+
 from django.db import models
 from django_ckeditor_5.fields import CKEditor5Field
 
@@ -65,3 +67,18 @@ class CanonEvent(models.Model):
 
     def __str__(self):
         return self.name
+
+class In_Character_Calendar(models.Model):
+    pass
+
+class Legislature(models.Model):
+    name = models.CharField(max_length=50)
+    last_update = models.DateTimeField(auto_now=True)
+    content = CKEditor5Field()
+    
+    class Meta:
+        db_table = "Laws"
+    
+    def save(self, *args, **kwargs):
+        self.pk = 1
+        return super().save(*args, **kwargs)
