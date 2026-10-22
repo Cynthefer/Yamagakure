@@ -11,33 +11,31 @@
 
 ### 1. `core` App (The Engine & Global Settings)
 - [x] **Site settings Mode:**
-  - [x] site name
-  - [ ] site emblem
-  - [ ] site background image
-  - [ ] site color theme
+  - [x] site `name`
+  - [x] site `emblem`
+  - [x] site `background image`
+  - [x] site `color theme`
 
 ### 2. `users` App (Profiles & Clearances)
-- [x] **CustomUser Model (extends AbstractUser):**
-  - `rank` (FK to Rank, default Level 1).
-  - `rp_name`, `avatar`, `bio`.
-  - `honorifics` (M2M to Honorific).
-  - `combat_xp` (Integer, default 10,000).
-  - *Custom Methods:* `is_order_of_ygnis()` (checks for specific honorific), `has_staff_powers()` (Level 6/7 or honorific), `can_view_classified(level)`, `can_manage_user_rank(target_user)`.
+- [x] **Profile Model (extends AbstractUser):**
+  - [x] `class_level ` classiefied view level
+  - [x] `honorifics` (M2M to Honorific).
+  - [x] `combat_xp` (Integer, default 10,000).
+  - [ ] *Custom Methods:* `is_order_of_ygnis()` (checks for specific honorific), `has_staff_powers()` (Level 6/7 or honorific), `can_view_classified(level)`, `can_manage_user_rank(target_user)`.
 
 ### 3. `battleposts` App (The Combat Archive)
-- [ ] **BattleTier Model:**
-  - Name (URM, MP, PC, etc.), Description (RichText for the massive rules blocks).
-- [ ] **BattlePost Model:**
-  - Title, Tier (FK).
-  - Header Info (Temperature, Weather, Windspeed, Location, Time).
-  - Narrative (RichText).
-  - Image (Optional).
-  - Outcome & Judging (Winner, Judge Notes).
-  - Meta: `required_rank` (FK), Tags, Created At, Published status.
+- [x] **BattlePost Model:**
+  - [x] `Title`
+  - [x] `Ruleset` (from rulesets.models )
+  - [ ] `Header Info` (Temperature, Weather, Windspeed, Location, Time).
+  - [x] `Narrative` (RichText).
+  - [ ] `Image` (Optional).
+  - [x]Outcome & Judging (Winner, Judge Notes).
+  - [ ] Meta: `required_rank` (FK), Tags, Created At, Published status.
 
 ### 4. `rulesets` App (The Laws)
-- [ ] **RulesetCategory Model:**
-  - Name (e.g., "Standard Rules", "Power Tiers").
+- [x] **RulesetCategory Limits Model:**
+  - `Name` (e.g., "Standard Rules", "Power Tiers").
 - [ ] **Ruleset Model:**
   - Category (FK), Title, Content (RichText), Order (Integer).
 
