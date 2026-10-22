@@ -1,5 +1,5 @@
 from django.db import models
-from django_ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 
 class House(models.Model):
     name = models.CharField(max_length=100)
@@ -56,7 +56,7 @@ class CombatRanks(models.Model):
 class CanonEvent(models.Model):
     name = models.CharField(max_length=100)
     date = models.DateField()
-    description = RichTextField()
+    description = CKEditor5Field()
     
     class Meta:
         db_table = "canon_event"

@@ -10,16 +10,19 @@ class Tiers(models.Model):
         PC = 'PC', 'Powered Characters'
         UCP = 'UCP', 'Ultra Powered Characters'
     
-    class Category_Limits(models.TextChoices):
-        name = models.CharField(max_length=255)
-        tier = models.CharField(max_length=3, choices=tier_standard.choices)
-        description = models.TextField(blank=True, null=True)
+    name = models.CharField(max_length=255, choices=tier_standard.choices)
+    description = models.TextField(blank=True, null=True)
         
 class Ruleset(models.Model):
     name = models.CharField(max_length=255)
+    tier = models.ForeignKey(Tiers, on_delete=models.CASCADE)
     description = CKEditor5Field(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        verbose_name = 'Ruleset'
+        verbose_name_plural = 'Rulesets'
 
     def __str__(self):
         return self.name

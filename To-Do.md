@@ -2,34 +2,19 @@
 
 ## Phase 1: Environment & Settings Setup
 - [x] Initialize virtual environment (`python -m venv venv`).
-- [x] Install required packages:
-  - `django`
-  - `django-ckeditor-5` (Rich Text)
-- [x] Configure `settings.py`:
-  - [x] Add all `INSTALLED_APPS` (Core, Users, Rulesets, Battleposts, Lore, News, History, + 3rd parties).
-  - [x] Set up `AUTH_USER_MODEL = 'users.CustomUser'`.
-  - [x] Set up `django-ckeditor-5` settings.
-  - [x] Set up `MEDIA_URL` and `MEDIA_ROOT` for image uploads.
-  - [x] Set up `STATIC_URL` and create the `static` directory.
-  - [ ] Configure `META_SITE_PROTOCOL` and `META_SITE_DOMAIN` for SEO.
-- [x] Run initial `makemigrations` and `migrate`.
-
+- [x] Install required packages
+- [x] Make applications
 ---
 
 ## Phase 2: The Apps & Models (Dynamic Architecture)
 *Everything must be completely dynamic (no hardcoding), editable via Django Admin.*
 
 ### 1. `core` App (The Engine & Global Settings)
-- [x] **Rank Model:** 
-  - Level (Integer 1-7, unique), Name.
-- [x] **Honorific Model:** 
-  - Name, Badge Image, `grants_superuser` (Boolean).
-- [ ] **CustomField Model:** (For extreme dynamism)
-  - Name, Field Type (Text, Number, Dropdown, Image), Options (for dropdowns), Applies To (Character, Battle, Lore).
-- [ ] **CustomFieldValue Model:** 
-  - Link to CustomField, Object ID, Value.
-- [x] **SiteSetting Model:** 
-  - Site Name, Emblem, Background Image, Theme Color, Discord/Facebook links.
+- [x] **Site settings Mode:**
+  - [x] site name
+  - [ ] site emblem
+  - [ ] site background image
+  - [ ] site color theme
 
 ### 2. `users` App (Profiles & Clearances)
 - [x] **CustomUser Model (extends AbstractUser):**
